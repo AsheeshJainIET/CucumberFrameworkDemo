@@ -14,6 +14,7 @@ import io.cucumber.java.en.When;
 import pageObjects.LendingPage;
 import pageObjects.PageObjectManager;
 import utils.TestContextSetup;
+import utils.logs.Log;
 
 public class LendingPageStepDefinition {
 	public WebDriver driver;
@@ -32,7 +33,7 @@ public class LendingPageStepDefinition {
 	
 	@Given("User is on Greenkart Lending Page")
 	public void user_is_on_greenkart_lending_page() {
-		
+		Log.info("Entering on lending page");
 		Assert.assertTrue(lendingPage.getTitleLandingPage().contains("GreenKart"));
 		
 	}

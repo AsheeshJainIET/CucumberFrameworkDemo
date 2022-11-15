@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import utils.logs.Log;
+
 public class TestBase {
 public WebDriver driver;
 public String baseURL;
@@ -24,6 +26,7 @@ public String baseURL;
 		String browser = browser_maven!=null ? browser_maven : browser_properties;
 		if(browser.equalsIgnoreCase("chrome"))
 		{
+			Log.info(browser+" is getting initialized");
 		System.setProperty("webdriver.chrome.driver", configReader.property.getProperty("driverPath"));
 		driver=new ChromeDriver();
 		}
